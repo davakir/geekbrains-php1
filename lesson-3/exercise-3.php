@@ -35,5 +35,21 @@ echo "<p style=\"font-weight: 700;\">Задание 3.</p>";
 
 echo "<p style=\"font-weight: 700;\">Задание 4.</p>";
 
-
+$arr  = array(
+    "Московская область" => array("Клин", "Лобня", "Химки"),
+    "Ленинградская область" => array("Пушкино", "Петергоф", "Кронштадт"),
+    "Калужская область" => array("Обнинск", "Медынь", "Козельск")
+);
+echo "<pre>";
+foreach ($arr as $item => $region) {
+    echo "<p>$item:</p>";
+    $f = true;
+    foreach ($region as $city) {
+        if (!$f)
+            echo ", $city";
+        else echo "\t$city";
+        $f = false;
+    }
+}
+echo "</pre>";
 ?>
