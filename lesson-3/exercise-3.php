@@ -52,4 +52,39 @@ foreach ($arr as $item => $region) {
     }
 }
 echo "</pre>";
+
+foreach ($arr as $item => $region) {
+    echo "<p>$item:</p>";
+    echo "<ul style=\"list-style-type: none;\">";
+    $f = true;
+    
+    foreach ($region as $city) {
+		echo "<li style=\"display: inline-block;\">";
+        if (!$f)
+            echo ", $city";
+        else echo "\t$city";
+        echo "</li>";
+        $f = false;
+    }
+    echo "</ul>";
+}
+
+echo "<p style=\"font-weight: 700;\">Задание 5.</p>";
+
+foreach ($arr as $item => $region) {
+	echo "<p>$item:</p>";
+    echo "<ul style=\"list-style-type: none;\">";
+    $f = true;
+	
+	foreach ($region as $city) {
+		echo "<li style=\"display: inline-block;\">";
+		if (preg_match('/[К]{1}.*/', $city))
+			echo "\t$city";
+		echo "</li>";
+	}
+	echo "</ul>";
+}
+
+echo "<p style=\"font-weight: 700;\">Задание 6.</p>";
+
 ?>
