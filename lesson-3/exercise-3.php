@@ -127,8 +127,8 @@ echo "<p style=\"font-weight: 700;\">Задание 6.</p>";
             "Г" => "G",
             "Д" => "D",
             "Е" => "E",
-            "Ё" => "YO",
-            "Ж" => "ZH",
+            "Ё" => "Yo",
+            "Ж" => "Zh",
             "З" => "Z",
             "И" => "I",
             "Й" => "Y",
@@ -143,44 +143,43 @@ echo "<p style=\"font-weight: 700;\">Задание 6.</p>";
             "Т" => "T",
             "У" => "U",
             "Ф" => "F",
-            "Х" => "KH",
-            "Ц" => "TS",
-            "Ч" => "CH",
-            "Ш" => "SH",
-            "Щ" => "TSH",
+            "Х" => "Kh",
+            "Ц" => "Ts",
+            "Ч" => "Ch",
+            "Ш" => "Sh",
+            "Щ" => "Tsh",
             "Ы" => "Y",
             "Э" => "E",
-            "Ю" => "YU",
-            "Я" => "YA",
+            "Ю" => "Yu",
+            "Я" => "Ya",
             "ь" => "",
             "Ь" => ""
         );
-
-        $char = array();
         $results = array();
         preg_match_all('/./u', $string, $results);
+        $str_res = "";
         foreach ($results[0] as $char) {
-            echo $char . " => ";
             if (array_key_exists($char, $alphabet))
-                echo $alphabet[$char] . "<br>";
+                $str_res .= $alphabet[$char];
             else
-                echo $char . "<br>";
+                $str_res .= $char;
         }
+        return $str_res;
     }
 
-    rusToEng("Я - Кирьянова Дарья Вадимовна");
+    echo rusToEng("Я - Кирьянова Дарья Вадимовна");
 
 echo "<p style=\"font-weight: 700;\">Задание 7.</p>";
 
     function spaceToLine($string) {
         $temp = explode(' ', $string);
         $string = implode('_', $temp);
-        echo "$string";
+        return $string;
     }
 
-    spaceToLine("Я - Кирьянова Дарья Вадимовна");
+    echo spaceToLine("Я - Кирьянова Дарья Вадимовна");
 
 echo "<p style=\"font-weight: 700;\">Задание 8.</p>";
 
-
+    echo spaceToLine(rusToEng("Я - Кирьянова Дарья Вадимовна"));
 ?>
