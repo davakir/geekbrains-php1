@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        .wrapper {
+            text-align: center;
+            display: inline-block;
+        }
+        .eb {
+            height:150px;
+            font-size: 3em;
+            vertical-align: top;
+            margin-top: 50px;
+        }
+
         table {
             border: 1px solid black;
             border-collapse: collapse;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -150px;
-            margin-left: -150px;
+            float: left;
+            margin: 20px;
         }
 
         td {
@@ -27,8 +35,17 @@
             background-color: #fff;
         }
 
-        td.man {
-            background-color: #f0f;
+        .north {
+            background: url(img/north.jpg) -3px -3px;
+        }
+        .east {
+            background: url(img/east.jpg) 0 -1px;
+        }
+        .south {
+            background: url(img/south.jpg) -2px -1px;
+        }
+        .west {
+            background: url(img/west.jpg) -2px 0;
         }
         td.line {
             background-color: yellow;
@@ -36,6 +53,9 @@
     </style>
 </head>
 <body>
+<div class="wrapper eb">
+    <h2>Let's Start!</h2>
+</div>
 <?php
 /**
  * Created by PhpStorm.
@@ -47,18 +67,20 @@
 $maze = array(
     array("*","*","*","*","*","*","*","*","*","*"),
     array("m"," "," "," "," "," "," "," "," ","*"),
-    array("*","*","*"," ","*","*"," ","*"," ","*"),
+    array("*","*","*"," ","*","*","*","*"," ","*"),
     array("*"," ","*"," "," "," ","*"," "," ","*"),
     array("*"," ","*"," "," "," ","*","*"," ","*"),
-    array("*"," "," ","*","*"," ","*"," "," ","*"),
+    array("*"," ","*","*","*"," ","*"," "," ","*"),
     array("*"," "," "," ","*"," ","*","*"," ","*"),
     array("*"," ","*"," ","*"," ","*"," "," ","*"),
     array("*"," ","*"," "," "," ","*"," "," "," "),
     array("*","*","*","*","*","*","*","*","*","*")
 );
 
-function arrDraw($maze) {
-    echo "<p><table>";
+function arrDraw($maze, $direction, $oldDirection) {
+    echo "<div class='wrapper'>";
+    echo "<table>";
+    $strMoveTo = "Я иду ";
     foreach ($maze as $item => $key) {
         echo "<tr>";
         foreach ($key as $symbol)  {
@@ -68,13 +90,31 @@ function arrDraw($maze) {
                 $class = "wall";
             elseif ($symbol === "l")
                 $class = "line";
-            else $class = "man";
-
+            else
+                switch ($direction) {
+                    case "north":
+                        $class = "man north";
+                        $strMoveTo .= "на север";
+                        break;
+                    case "east":
+                        $class = "man east";
+                        $strMoveTo .= "на восток";
+                        break;
+                    case "south":
+                        $class = "man south";
+                        $strMoveTo .= "на юг";
+                        break;
+                    case "west":
+                        $class = "man west";
+                        $strMoveTo .= "на запад";
+                }
             echo "<td class='$class'></td>";
         }
         echo "</tr>";
     }
-    echo "</table></p>";
+    echo "</table>";
+    echo "<p>$strMoveTo</p>";
+    echo "</div>";
 }
 
 function steps($maze) {
@@ -88,7 +128,10 @@ function steps($maze) {
 
     $dir = "east";
     do {
+        $oldDir = $dir;
+        arrDraw($maze, $dir, $oldDir);
         $maze[$manRow][$manCol] = "l";
+
         switch ($dir) {
             case "east":
                 if ($maze[$manRow+1][$manCol] != "*") {
@@ -158,13 +201,15 @@ function steps($maze) {
                     $dir = "north";
                 }
         }
+        $maze[$manRow][$manCol] = "m";
     } while ($manCol < 10);
-    $maze[$manRow][$manCol-1] = "m";
     return $maze;
 }
-arrDraw(steps($maze));
+steps($maze);
 ?>
-
+<div class="wrapper eb">
+    <h2>The End!</h2>
+</div>
 </body>
 </html>
 

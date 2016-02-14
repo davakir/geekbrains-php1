@@ -155,10 +155,9 @@ echo "<p style=\"font-weight: 700;\">Задание 6.</p>";
             "ь" => "",
             "Ь" => ""
         );
-        $results = array();
-        preg_match_all('/./u', $string, $results);
+        $results = preg_split('//u', $string);
         $str_res = "";
-        foreach ($results[0] as $char) {
+        foreach ($results as $char) {
             if (array_key_exists($char, $alphabet))
                 $str_res .= $alphabet[$char];
             else
