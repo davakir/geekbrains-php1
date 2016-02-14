@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,13 +56,8 @@
 <div class="wrapper eb">
     <h2>Let's Start!</h2>
 </div>
+
 <?php
-/**
- * Created by PhpStorm.
- * User: Darya
- * Date: 13.02.2016
- * Time: 23:32
- */
 
 $maze = array(
     array("*","*","*","*","*","*","*","*","*","*"),
