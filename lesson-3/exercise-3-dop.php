@@ -47,6 +47,10 @@
         .west {
             background: url(img/west.jpg) -2px 0;
         }
+        .man {
+			background-color: #f45f45;
+		}
+        
         td.line {
             background-color: yellow;
         }
