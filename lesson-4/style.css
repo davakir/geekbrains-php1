@@ -1,5 +1,5 @@
 body {
-    width: 50%;
+    width: 60%;
     margin-left:auto;
     margin-right: auto;
 }
@@ -13,9 +13,10 @@ input:focus, textarea:focus {
     border-color: #FE2045;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     padding: 5px 0 5px 5px;
-    width: 50px;
+    width: 100px;
     font-weight: bold;
 }
 
@@ -23,7 +24,9 @@ textarea {
     height: 150px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+input[type="reset"]
+ {
     border: none;
     padding: 8px 20px;
     margin: 10px 0;
@@ -34,6 +37,24 @@ input[type="submit"] {
     letter-spacing: 2px;
 }
 
+input[disabled=""] {
+	background-color: #FFF;
+	color: #000;
+}
+
 .center {
     text-align: center;
+    margin-top: 100px;
+}
+
+#error {
+	color: #f00;
+}
+
+
+#ok {
+	height: 200px;
+	font-size: 4em;
+	color: #f45f45;
+	text-align: center;
 }

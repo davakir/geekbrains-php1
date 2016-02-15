@@ -1,10 +1,10 @@
 <?php
 header('Content-type:text/html;charset=utf-8');
-    if (isset($_GET['firstValue']) && isset($_GET['secondValue']))
+    if (isset($_POST['firstValue']) && isset($_POST['secondValue']))
     {
-        $firstValue = $_GET['firstValue'];
-        $secondValue = $_GET['secondValue'];
-        $operation = $_GET['operation'];
+        $firstValue = $_POST['firstValue'];
+        $secondValue = $_POST['secondValue'];
+        $operation = $_POST['operation'];
         switch ($operation) {
             case "+":
                 $result = $firstValue + $secondValue;
@@ -24,6 +24,7 @@ header('Content-type:text/html;charset=utf-8');
 
         }
     }
+    $arrOperations = array("+","-","*","/");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,20 +34,24 @@ header('Content-type:text/html;charset=utf-8');
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <form method="GET">
+    <form method="POST">
         <input type="text" name="firstValue"
-        <?php if (isset($_GET['firstValue']))
+        <?php if (isset($_POST['firstValue']))
             echo "value='$firstValue'";
         ?>
         />
         <select name="operation" id="symbol">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
+			<?php
+				foreach ($arrOperations as $item) {
+					echo "<option value=\"$item\"";
+					if ($_POST['operation'] == $item)
+						echo "selected=\"selected\"";
+					echo ">$item</option>";
+				}
+			?>
         </select>
         <input type="text" name="secondValue"
-            <?php if (isset($_GET['secondValue']))
+            <?php if (isset($_POST['secondValue']))
                 echo "value='$secondValue'";
             ?>
         />
