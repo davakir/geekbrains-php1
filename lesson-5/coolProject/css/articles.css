@@ -1,0 +1,66 @@
+article {
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+
+section.article-page{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+}
+
+section.article-page h1 {
+	text-align: center;
+}
+
+article header {
+	margin-bottom: 10px;
+}
+
+section.articles a {
+	text-decoration: none;
+	color: sienna;
+	font-weight: 700;
+}
+
+section.articles h1 {
+	
+}
+
+section.articles a:hover {
+	text-decoration: underline;
+	color: #808000;
+}
+
+section.articles h1 a:hover {
+	text-decoration: none;
+}
+
+.comments {
+	margin-top: 40px;
+}
+
+.comments ul {
+	list-style: none;
+}
+
+.comments .comment {
+	border-top: 3px solid darkslategrey;
+	border-left: 3px solid darkslategrey;
+	margin-bottom: 20px;
+	padding: 10px 15px;
+}
+
+.comment .comment-icon {
+	float: left;
+	padding: 0 10px 10px 0;
+}
+
+.comment .comment-icon img {
+	border-radius: 35px;
+}
+
+.short-description {
+	background-color: silver;
+}

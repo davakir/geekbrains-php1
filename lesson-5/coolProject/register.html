@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+	<meta charset="utf-8"/>
+	<meta name="description" content="This is the main page of my site"/>
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<link rel="stylesheet" href="css/form.css" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+	<div class="content">
+		<ul class="main-menu">
+			<li>
+				<h1><a href="index.html">Home</a></h1>
+			</li>
+			<li><a href="articles.html">Статьи</a></li>
+			<li><a href="catalog.html">Каталог</a></li>
+			<li><a href="gallery.html">Галерея изображений</a></li>
+			<li class="here"><a href="register.html">Регистрация</a></li>
+			<li><a href="contacts.html">Контакты</a></li>
+		</ul>
+		<section>
+			<table class="register-form">
+				<caption><h1>Форма регистрации</h1></caption>
+				<form action="command.php" method="POST">
+					<tr>
+						<td class="labels"><label for="sirname">Фамилия:</label></td>
+						<td><input type="text" id="sirname" placeholder="Фамилия"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="name">Имя:</label></td>
+						<td><input type="text" id="name" placeholder="Имя"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="secname">Отчество:</label></td>
+						<td><input type="text" id="secname" placeholder="Отчество"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="photo">Выберите фото:</label></td>
+						<td><input type="file" id="photo"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="e-mail">E-mail:</label></td>
+						<td><input type="email" id="e-mail"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="pass">Введите пароль:</label></td>
+						<td><input type="password" id="pass"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="site">Ваш электронный адрес:</label></td>
+						<td><input type="text" id="site" value="http://"></td>
+					</tr>
+					<tr>
+						<td class="labels">Пол:</td>
+						<td>
+							<label><input type="radio" name="sex" value="male" checked="checked">Мужской</label>
+							<label><input type="radio" name="sex" value="female">Женский</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="labels">
+							<label for="interest">Что Вас больше всего интересует?</label>
+						</td>
+						<td>
+							<select name="interest" id="interest">
+								<option value="history">История</option>
+								<option value="culture">Культура</option>
+								<option value="economics">Экономика</option>
+								<option value="travel">Путешествия</option>
+								<option value="fashion">Мода</option>
+								<option value="it">IT-технологии</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="labels">
+							<label for="about">Расскажите немного о себе:</label>
+						</td>
+						<td>
+							<textarea id="about" placeholder="Расскажите о себе..."></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<input type="reset" class="btn" value="очистить форму">
+							<input type="submit" class="btn" value="зарегистрироваться">					
+						</td>
+					</tr>
+				</form>
+			</table>
+		</section>
+		</div>
+		<footer>
+			All rights reserved &copy; 2015
+		</footer>
+</body>
+</html>

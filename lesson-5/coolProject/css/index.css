@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	background: url(../img/simple-gray-texture.jpg) repeat;
+	font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+.content {
+	position: relative;
+	height: 100%;
+	margin-bottom: 35px;
+	
+}
+
+section {
+	margin-left: 70px;
+	margin-right: 70px;
+}
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	text-align: right;
+	padding-right: 30px;
+	box-sizing: border-box;
+	background-color: rgba(255,255,255,0);
+}
+
+
+section h1,h2,h3,h4,h5,h6 {
+	margin-bottom: 10px;
+}
+
+.main-menu {
+	width: auto;
+	padding-top: 30px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid darkslategrey;
+}
+
+.main-menu li.here a{
+	border-bottom: 3px solid #f45f45;
+}
+
+.main-menu li{
+	display: inline-block;
+	margin: 0;
+	margin-right: 20px;
+	border-bottom: 3px solid rgba(255,255,255,0);
+}
+
+.main-menu li:hover {
+	border-bottom-color: mediumaquamarine; 
+}
+
+.main-menu li a {
+	text-decoration: none;
+	color: darkslategrey;
+	font-family: Comfortaa, cursive;
+}
+
+section ul {
+	list-style-position: inside;
+	margin-left: 20px;
+}
+
+section .welcome { 
+	width: 50%;
+	height: 200px;
+	font-size: 3em;
+	line-height: 200px;
+	text-align: center;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.welcome-english {
+	color: darkcyan;
+	float: left;	
+}
+
+.welcome-german {
+	color: darkgreen;
+	float: right;
+}
+
+.welcome-russian {
+	color: olive;
+	float: left;
+}
+
+.welcome-spanish {
+	color: rebeccapurple;
+	float: right;
+}
+
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+	width: 100%;
+}
+
+section.images {
+	text-align: center;
+}
+
+img {
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	border: 3px solid darkslategrey;
+	box-sizing: border-box;
+}
+
+img:hover {
+	border: none;
+}
+
+/*списки в разделе Каталог*/
+
+.outside-list {
+	list-style-image: url(../img/list-style-image-2.png);
+	width: 40%;
+	background-color: burlywoo;
+}
+
+.outside-list > li {
+	font-size: larger;
+}
+
+.inside-list {
+	list-style-image: url(../img/list-style-image.png);
+	margin-bottom: 10px;
+	font-size: smaller;
+	background-color: cora;
+}
+
+h1.themes {
+	color: darkslategray;
+}

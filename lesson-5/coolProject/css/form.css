@@ -1,0 +1,37 @@
+table {
+	margin-bottom: 30px;
+}
+
+table .labels {
+	text-align: right;
+	margin-right: 15px;
+}
+
+.register-form {
+	border-spacing: 10px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"],
+textarea{
+	padding: 5px 0 5px 5px;
+	border-radius: 0;
+	border: 2px solid #008080;
+	width: 300px;
+	font-weight: bold;
+}
+
+textarea {
+	height: 100px;
+}
+
+.btn {
+	border-radius: 0;
+	border: none;
+	padding: 10px 10px;
+	background-color: #008080;
+	color: #ffffff;
+	font-weight: 700;
+	font-variant: small-caps;
+}

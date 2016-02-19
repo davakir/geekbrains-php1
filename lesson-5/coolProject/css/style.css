@@ -1,0 +1,25 @@
+/*colors*/
+.main-menu {
+  width: auto;
+  padding-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #2f4f4f;
+}
+.main-menu li {
+  display: inline-block;
+  margin: 0;
+  margin-right: 20px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+}
+.main-menu li:hover {
+  border-bottom-color: mediumaquamarine;
+}
+.main-menu li a {
+  text-decoration: none;
+  color: #2f4f4f;
+  font-family: Comfortaa, cursive;
+}
+
+/*# sourceMappingURL=style.css.map */
