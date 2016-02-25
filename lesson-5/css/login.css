@@ -1,0 +1,21 @@
+input {
+	display: block;
+	margin: 10px;
+}
+
+input[type="checkbox"] {
+	display: inline-block;
+}
+
+form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -10%;
+	margin-left: -10%;
+}
+
+a {
+    color: #008080;
+}
+

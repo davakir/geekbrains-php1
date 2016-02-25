@@ -1,0 +1,65 @@
+table {
+	margin-bottom: 30px;
+}
+
+caption {
+    text-align: center;
+}
+
+table .labels {
+	text-align: right;
+	margin-right: 15px;
+}
+
+.register-form {
+	border-spacing: 10px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"],
+textarea{
+	padding: 5px 0 5px 5px;
+	border-radius: 0;
+	border: 2px solid #008080;
+	width: 300px;
+	font-weight: bold;
+}
+
+input[type="file"] input {
+	border: 2px solid #008080;
+	padding: 5px 15px;
+}
+
+
+input[type="radio"] {
+    margin: 0;
+    display: inline-block;
+}
+
+textarea {
+	height: 100px;
+}
+
+.btn {
+	border-radius: 0;
+	border: none;
+	padding: 10px 10px;
+	background-color: #008080;
+	color: #ffffff;
+	font-weight: 700;
+	font-variant: small-caps;
+}
+
+.error {
+    color: #f00;
+}
+
+.error-info {
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+}
+

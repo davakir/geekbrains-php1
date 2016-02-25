@@ -1,0 +1,32 @@
+/*colors*/
+
+$darkgray: #2f4f4f;
+$darkcyan: #008b8b;
+$dark-coral: #f45f45;
+$coral: #ff7f50;
+$burlywood: #deb887;
+
+$font-header: Comfortaa, cursive;
+
+.main-menu {
+	width: auto;
+	padding-top: 30px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid $darkgray;
+	li {
+		display: inline-block;
+		margin: 0;
+		margin-right: 20px;
+		border-bottom: 3px solid rgba(255,255,255,0);
+		&:hover {
+			border-bottom-color: mediumaquamarine; 
+		}
+		a {
+			text-decoration: none;
+			color: $darkgray;
+			font-family: $font-header;
+		}
+	}
+}
