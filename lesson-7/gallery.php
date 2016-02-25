@@ -1,10 +1,12 @@
 <?php
 require_once("functions/file_handling.php");
 require_once("functions/img_resize.php");
+require_once("functions/mysql_db_service.php");
 if (isset($_POST['submit'])) {
 	$file = $_FILES['file'];
 		$err = is_valid_file($file);
 		if (!$err) {
+		    insert_into_db($file);
 			change_location($file['tmp_name'], $file['name']);
 			img_resize("uploads/" . $file['name'], "img_preview/" . $file['name'], 200, 200);
 		}

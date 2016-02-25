@@ -2,7 +2,6 @@
 header("Content-type: text/html; charset=UTF-8");
 function connect($db_name = "test") {
     $mysql_host = "localhost:3306";
-    // http://udkkd4e92ccf.davakir.koding.io/
     $mysql_login = "root";
     $mysql_pass = "p1010942342";
     $connection = mysql_connect($mysql_host, $mysql_login, $mysql_pass);

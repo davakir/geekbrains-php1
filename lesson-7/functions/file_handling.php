@@ -20,4 +20,17 @@ function is_valid_file($file) {
     else $err = "Неверный формат файла";
     return $err;
 }
+
+function insert_into_db($file) {
+    $name = $file['name'];
+    $size = $file['size'];
+    $tmp_arr = explode('.', $name); //массив имени и расширения
+    //возвращаемые имя и расширение
+    $name = md5($tmp_arr[0]);
+    $ext = $tmp_arr[1];
+    
+    $query = "INSERT INTO images (name, extension, size, time_seen)";
+    
+}
+
 ?>
