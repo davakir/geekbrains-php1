@@ -1,0 +1,38 @@
+.image {
+    display: inline-block;
+    margin: 20px;
+    vertical-align: middle;
+}
+
+form {
+    height: 80px;
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: center;
+}
+
+.btn, button {
+    border-radius: 0;
+    border: none;
+    padding: 10px 10px;
+    background-color: #008080;
+    color: #ffffff;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+.gallery {
+    line-height: 300px;
+}
+
+.error {
+    color: #f00;
+}
+
+section {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
