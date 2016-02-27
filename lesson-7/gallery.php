@@ -1,14 +1,15 @@
 <?php
 require_once("functions/file_handling.php");
 require_once("functions/img_resize.php");
-require_once("functions/mysql_db_service.php");
+// var_dump($_SERVER);
 if (isset($_POST['submit'])) {
 	$file = $_FILES['file'];
 		$err = is_valid_file($file);
 		if (!$err) {
-		    insert_into_db($file);
-			change_location($file['tmp_name'], $file['name']);
-			img_resize("uploads/" . $file['name'], "img_preview/" . $file['name'], 200, 200);
+		    $img_name = insert_into_db($file);
+			change_location($file['tmp_name'], $img_name);
+			
+			img_resize("uploads/" . $img_name, "img_preview/" . $img_name, 200, 200);
 		}
 }
 ?>
@@ -49,7 +50,7 @@ if (isset($_POST['submit'])) {
 			$images = scandir("uploads/");
 			for ($i = 2; $i < count($images); $i++) {
 				echo "<p class='image'>";
-				echo "<a href='uploads/$images[$i]' target='_blank'>";
+				echo "<a href='uploads/$images[$i]' target='photo.php'>";
 				echo "<img src='img_preview/$images[$i]' alt='Фото' width='200px'>";
 				echo "</a>";
 				echo "</p>";
