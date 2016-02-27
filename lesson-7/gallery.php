@@ -8,7 +8,6 @@ if (isset($_POST['submit'])) {
 		if (!$err) {
 		    $img_name = insert_into_db($file);
 			change_location($file['tmp_name'], $img_name);
-			
 			img_resize("uploads/" . $img_name, "img_preview/" . $img_name, 200, 200);
 		}
 }
@@ -49,9 +48,10 @@ if (isset($_POST['submit'])) {
 			<?php
 			$images = scandir("uploads/");
 			for ($i = 2; $i < count($images); $i++) {
+			    $path_to_img = "uploads/" . $images[$i];
 				echo "<p class='image'>";
-				echo "<a href='uploads/$images[$i]' target='photo.php'>";
-				echo "<img src='img_preview/$images[$i]' alt='Фото' width='200px'>";
+				echo "<a href=\"photo.php?img_name=$path_to_img\" target='_blank'>";
+				echo "<img src=\"img_preview/$images[$i]\" alt='Фото' width='200px'>";
 				echo "</a>";
 				echo "</p>";
 			}
