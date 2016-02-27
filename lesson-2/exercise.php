@@ -109,31 +109,24 @@ echo "<p style=\"font-weight: 700;\">Задание 5*.</p>";
 
 echo "<p style=\"font-weight: 700;\">Задание 6*.</p>";
 
-    function getTime() {
-        $hours = date('H');
-        $minutes = date('i');
-
-        switch ($hours % 10) {
-            case 0: $hours .= " часов "; break;
-            case 1: $hours .= " час "; break;
-            case 2: case 3: case 4:
-            $hours .= " часа "; break;
-            case 5: case 6: case 7: case 8: case 9:
-            $hours .= " часов "; break;
+    function getVarCaption($var, $val_1, $val_2, $val_3) {
+        $str = $var . " ";
+        $tmp = $var%10;
+        var_dump($tmp);
+        if ($var < 10 && $var > 20) {
+            if ($tmp == 1) {
+                $str .= $val_1;
+            }
+            else if ($tmp >=2 && $tmp <= 4) {
+                $str .= $val_2;
+            }
+            else $str .= $val_3;
         }
-
-        switch ($minutes % 10) {
-            case 0: $minutes .= " минут "; break;
-            case 1: $minutes .= " минута "; break;
-            case 2: case 3: case4: $minutes .= " минуты "; break;
-            case 5: case 6: case 7: case 8: case 9: $minutes.= " минут ";
-        }
-        if ($minutes >=11 && $minutes <=14)
-            $minutes .= " минут ";
-
-        return $hours . $minutes;
+        else $str .= $val_3;
+        return $str;
     }
-
-    echo "Сейчас " . getTime() . "</br>";
+    $hours = date('H');
+    $mins = date('i');
+    echo "Сейчас " . getVarCaption($hours, "час", "часа", "часов") ." ". getVarCaption(24, "минута", "минуты", "минут") . "</br>";
 ?>
 
