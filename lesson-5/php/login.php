@@ -20,12 +20,12 @@ function hash_gen($length) {
 //задаем cookie
 function set_cookie($data) {
     //задаем cookie с уникальным идентификатором польз-ля
-    setcookie('user_id', $data['user_id'], time() + 60*5);
+    setcookie('user_id', $data['user_id'], time() + 3600*24*30);
     
     //задаем cookie с хэш-строкой польз-ля
     $hash_str = hash_gen(10);
     update_user($data['user_id'], $hash_str);
-    setcookie('user_hash', $hash_str, time() + 60*5);
+    setcookie('user_hash', $hash_str, time() + 3600*24*30);
     header('Location: index.php');
     exit();
 }
