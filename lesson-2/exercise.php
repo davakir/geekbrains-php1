@@ -112,8 +112,7 @@ echo "<p style=\"font-weight: 700;\">Задание 6*.</p>";
     function getVarCaption($var, $val_1, $val_2, $val_3) {
         $str = $var . " ";
         $tmp = $var%10;
-        var_dump($tmp);
-        if ($var < 10 && $var > 20) {
+        if ($var < 10 || $var > 20) {
             if ($tmp == 1) {
                 $str .= $val_1;
             }
@@ -127,6 +126,6 @@ echo "<p style=\"font-weight: 700;\">Задание 6*.</p>";
     }
     $hours = date('H');
     $mins = date('i');
-    echo "Сейчас " . getVarCaption($hours, "час", "часа", "часов") ." ". getVarCaption(24, "минута", "минуты", "минут") . "</br>";
+    echo "Сейчас " . getVarCaption($hours, "час", "часа", "часов") ." ". getVarCaption($mins, "минута", "минуты", "минут") . "</br>";
 ?>
 
