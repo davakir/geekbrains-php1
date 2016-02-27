@@ -26,7 +26,7 @@ function insert_into_db($file) {
     //возвращаемые имя и расширение
     $name = md5($img_arr[0]);
     $ext = $img_arr[1];
-    $query = mysql_query("INSERT INTO images (name, extension, size, time_seen) values ('".$name."','". $ext ."',". $size .", 0)", $conn);
+    mysql_query("INSERT INTO images (name, extension, size, time_seen) values ('".$name."','". $ext ."',". $size .", 0)", $conn);
     return $name;
 }
 
