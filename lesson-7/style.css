@@ -1,7 +1,7 @@
-.image {
-    display: inline-block;
-    margin: 20px;
-    vertical-align: middle;
+section {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form {
@@ -23,16 +23,16 @@ form {
     font-variant: small-caps;
 }
 
-.gallery {
-    line-height: 300px;
-}
-
 .error {
     color: #f00;
 }
 
-section {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.image {
+    display: inline-block;
+    margin: 20px;
+    vertical-align: middle;
+    text-align: center;
 }
+
+
+
