@@ -1,7 +1,9 @@
 <?php
 require_once("functions/file_handling.php");
 require_once("functions/img_resize.php");
-// var_dump($_SERVER);
+require_once("functions/mysql_db_service.php");
+require_once("functions/reviews.php");
+
 if (isset($_POST['submit'])) {
 	$file = $_FILES['file'];
 		$err = is_valid_file($file);
@@ -11,6 +13,17 @@ if (isset($_POST['submit'])) {
 			img_resize("uploads/" . $img_name, "img_preview/" . $img_name, 200, 200);
 		}
 }
+
+function select_images() {
+    $conn = connect();
+    $arr = array();
+    $query = mysql_query("SELECT name, time_seen FROM images ORDER BY time_seen DESC", $conn);
+    while ($row = mysql_fetch_assoc($query)) {
+        $arr[] = $row;
+    }
+    return $arr;
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,13 +59,15 @@ if (isset($_POST['submit'])) {
 		</form>
 		<div class="gallery">
 			<?php
-			$images = scandir("uploads/");
-			for ($i = 2; $i < count($images); $i++) {
-			    $path_to_img = "uploads/" . $images[$i];
+			$all_images = select_images();
+			for ($i = 0; $i < count($all_images); $i++) {
+			    $path_to_img = "uploads/" . $all_images[$i]['name'];
+			    $path_to_mini_img = "img_preview/" . $all_images[$i]['name'];
 				echo "<p class='image'>";
 				echo "<a href=\"photo.php?img_name=$path_to_img\" target='_blank'>";
-				echo "<img src=\"img_preview/$images[$i]\" alt='Фото' width='200px'>";
-				echo "</a>";
+				echo "<img src=\"$path_to_mini_img\" alt='Фото' width='200px'>";
+				echo "</a><br />";
+				echo "<span>" . getVarCaption($all_images[$i]['time_seen'], "просмотр", "просмотра", "просмотров") . "</span>";
 				echo "</p>";
 			}
 			?>
